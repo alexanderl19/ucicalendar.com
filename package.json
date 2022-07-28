@@ -1,0 +1,20 @@
+{
+  "name": "ucicalendar.com",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Alexander Liu <humans@alexanderliu.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://git.sr.ht/~alexanderliu/ucicalendar.com"
+  },
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^1.0.0-rc.2",
+    "prettier": "2.7.1"
+  }
+}
