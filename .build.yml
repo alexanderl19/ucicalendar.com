@@ -1,0 +1,27 @@
+image: alpine/latest
+packages:
+  - nodejs
+  - npm
+sources:
+  - https://git.sr.ht/~alexanderliu/ucicalendar.com
+tasks:
+  - setup: |
+      sudo npm install --global pnpm
+      sudo npm install --global vercel
+      cd ucicalendar.com
+      pnpm install
+      set +x
+      . ~/.vercel.env
+      vercel pull --yes --environment=production --scope alexanderliu --token=$VERCEL_TOKEN
+      set -x
+  - build: |
+      cd ucicalendar.com
+      vercel build --prod
+  - deploy: |
+      cd ucicalendar.com
+      set +x
+      . ~/.vercel.env
+      vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+      set -x
+secrets:
+  - b6852d98-55b0-4367-a64b-1f7d94d673d6
