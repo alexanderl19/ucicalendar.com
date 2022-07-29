@@ -15,7 +15,8 @@ export default function middleware(
     if (summer && !year) {
       incrCounter(context);
       return Response.redirect(
-        "https://reg.uci.edu/calendars/quarterly/2021-2022/summer22.html"
+        "https://reg.uci.edu/calendars/quarterly/2021-2022/summer22.html",
+        307
       );
     }
 
@@ -23,7 +24,8 @@ export default function middleware(
     if (!year) {
       incrCounter(context);
       return Response.redirect(
-        "https://reg.uci.edu/calendars/quarterly/2022-2023/quarterly22-23.html"
+        "https://reg.uci.edu/calendars/quarterly/2022-2023/quarterly22-23.html",
+        307
       );
     }
 
@@ -52,7 +54,7 @@ export default function middleware(
       );
     }
 
-    return Response.redirect(new URL("/about", request.url).toString());
+    return Response.redirect(new URL("/about", request.url).toString(), 307);
   } else {
     return new Response(null, {
       headers: {
