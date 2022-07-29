@@ -1,4 +1,7 @@
-export default function middleware(request: Request) {
+export default function middleware(
+  request: Request,
+  context: { waitUntil(promise: Promise<unknown>): void }
+) {
   const { pathname } = new URL(request.url);
   const match = pathname.match(/^\/(?<summer>s?)(?<year>(\d{2})?)$/);
 
@@ -10,6 +13,7 @@ export default function middleware(request: Request) {
 
     // Current/Next Summer Calendar (ucicalendar.com/s)
     if (summer && !year) {
+      incrCounter(context);
       return Response.redirect(
         "https://reg.uci.edu/calendars/quarterly/2021-2022/summer22.html"
       );
@@ -17,6 +21,7 @@ export default function middleware(request: Request) {
 
     // Current/Next Yearly Calendar (ucicalendar.com/)
     if (!year) {
+      incrCounter(context);
       return Response.redirect(
         "https://reg.uci.edu/calendars/quarterly/2022-2023/quarterly22-23.html"
       );
@@ -28,6 +33,7 @@ export default function middleware(request: Request) {
       const secondYear = String(year).padStart(2, "0");
       const fullYearRange = `20${firstYear}-20${secondYear}`;
 
+      incrCounter(context);
       return Response.redirect(
         `${baseUrl}/${fullYearRange}/summer${secondYear}.html`
       );
@@ -40,6 +46,7 @@ export default function middleware(request: Request) {
       const yearRange = `${firstYear}-${secondYear}`;
       const fullYearRange = `20${firstYear}-20${secondYear}`;
 
+      incrCounter(context);
       return Response.redirect(
         `${baseUrl}/${fullYearRange}/quarterly${yearRange}.html`
       );
@@ -54,3 +61,18 @@ export default function middleware(request: Request) {
     });
   }
 }
+
+const incrCounter = (
+  context: {
+    waitUntil(promise: Promise<unknown>): void;
+  },
+  key = "count"
+) => {
+  context.waitUntil(
+    fetch(`${process.env.UPSTASH_REDIS_REST_URL}/incr/${key}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.UPSTASH_REDIS_REST_TOKEN}`,
+      },
+    })
+  );
+};
