@@ -54,7 +54,7 @@ export default function middleware(
       );
     }
 
-    return Response.redirect(new URL("/about", request.url).toString(), 307);
+    return Response.redirect(new URL("/format", request.url).toString(), 307);
   } else {
     return new Response(null, {
       headers: {

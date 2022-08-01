@@ -1,0 +1,37 @@
+---
+title: Format
+layout: ../layouts/Layout.astro
+---
+
+import Callout from "../components/Callout.svelte";
+
+# ucicalendar.com Format
+
+You can use ucicalendar.com to quickly access the current calendar or one for a specific year.
+
+<Callout>
+  When sending a link that might get referenced in the future, it's recommended
+  you specify the year. However, if you're just linking to the calendar in
+  general (and not referring to specific dates), specifying the year isn't
+  necessary!
+</Callout>
+
+## Current / Next Calendar
+
+`https://ucicalendar.com/` redirects to the current calendar until transcripts are available for Spring quarter (~Jun 26). Afterwards, it redirects to next year's calendar.
+
+## Current / Next Summer Calendar
+
+`https://ucicalendar.com/s` redirects to the current summer calendar until transcripts are available for Summer Session II (~Sep 15). Afterwards, it redirects to next year's summer calendar (if available).
+
+## Calendar (Specific Year)
+
+`https://ucicalendar.com/<year>` redirects to the calendar that beginning in the specified year.
+
+For example, `https://ucicalendar.com/20` always redirects to the 2020 - 2021 academic calendar.
+
+## Summer Calendar (Specific Year)
+
+`https://ucicalendar.com/s<year>` redirects to the summer calendar that beginning in the specified year.
+
+For example, `https://ucicalendar.com/s20` always redirects to the 2020 summer calendar.
