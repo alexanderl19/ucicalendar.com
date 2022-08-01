@@ -3,9 +3,9 @@
 </script>
 
 <nav>
-  <a href="https://ucicalendar.com">ucicalendar.com↗</a>
   <a class:active={pathname === "/about"} href="/about">about</a>
   <a class:active={pathname === "/format"} href="/format">format</a>
+  <a href="https://ucicalendar.com">ucicalendar.com↗</a>
 </nav>
 
 <style>
