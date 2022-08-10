@@ -17,4 +17,4 @@ If you have any questions or suggestions, please get it touch at humans@alexande
 
 ## Source
 
-This project is released under the [MIT License](https://git.sr.ht/~alexanderliu/ucicalendar.com/tree/main/item/LICENSE). You can view the source code [here](https://git.sr.ht/~alexanderliu/ucicalendar.com).
+This project is released under the [MIT License](https://git.sr.ht/~alexanderliu/ucicalendar.com/tree/main/item/LICENSE). You can view the source code [on sourcehut](https://git.sr.ht/~alexanderliu/ucicalendar.com).
