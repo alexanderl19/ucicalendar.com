@@ -8,6 +8,9 @@ import Nav from "../components/Nav.svelte";
     <title>{content.title} - ucicalendar.com</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta charset="utf-8" />
+    <meta name="description" content={content.description} />
+    <meta property="og:title" content={content.title + " - ucicalendar.com"} />
+    <meta property="og:description" content={content.description} />
   </head>
 
   <!-- Permanently set dark-theme class so Radix dark scales apply when prefers-color-scheme is dark. -->
