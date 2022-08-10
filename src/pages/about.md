@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Layout.astro
 title: About
-description: A simple way to quickly access the UCI calendar.
+description: A fast, and somewhat pointless, way to quickly reference UCI academic calendars.
 ---
 
 # About ucicalendar.com
