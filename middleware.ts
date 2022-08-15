@@ -14,10 +14,7 @@ export default function middleware(
     // Current/Next Summer Calendar (ucicalendar.com/s)
     if (summer && !year) {
       incrCounter(context);
-      return Response.redirect(
-        "https://reg.uci.edu/calendars/quarterly/2021-2022/summer22.html",
-        307
-      );
+      return Response.redirect("https://summer.uci.edu/calendar/", 307);
     }
 
     // Current/Next Yearly Calendar (ucicalendar.com/)
