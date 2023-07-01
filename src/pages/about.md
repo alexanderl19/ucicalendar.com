@@ -13,7 +13,7 @@ ucicalendar.com can also redirect you to calendars from specific years, and summ
 
 ## Contact
 
-If you have any questions or suggestions, please get it touch at humans@alexanderliu.com.
+If you have any questions or suggestions, please get it touch at <a@alexanderliu.com>.
 
 ## Source
 
