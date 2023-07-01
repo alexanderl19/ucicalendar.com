@@ -21,13 +21,13 @@ export default function middleware(
     if (!year) {
       incrCounter(context);
       return Response.redirect(
-        "https://reg.uci.edu/calendars/quarterly/2022-2023/quarterly22-23.html",
+        "https://reg.uci.edu/calendars/quarterly/2023-2024/quarterly23-24.html",
         307
       );
     }
 
     // Summer Calendar (ucicalendar.com/s<year>)
-    if (summer && year && 15 <= year && year <= 22) {
+    if (summer && year && 15 <= year && year <= 23) {
       const firstYear = String(year - 1).padStart(2, "0");
       const secondYear = String(year).padStart(2, "0");
       const fullYearRange = `20${firstYear}-20${secondYear}`;
@@ -39,7 +39,7 @@ export default function middleware(
     }
 
     // Yearly Calendar (ucicalendar.com/<year>)
-    if (year && 8 <= year && year <= 23) {
+    if (year && 8 <= year && year <= 24) {
       const firstYear = String(year).padStart(2, "0");
       const secondYear = String(year + 1).padStart(2, "0");
       const yearRange = `${firstYear}-${secondYear}`;
