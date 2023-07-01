@@ -19,15 +19,15 @@
     padding: 4px 8px;
     border-radius: 4px;
     text-decoration: none;
-    background-color: var(--gray3);
+    background-color: var(--gray-3);
   }
 
   nav a:hover {
-    background-color: var(--gray4);
+    background-color: var(--gray-4);
   }
 
   nav a.active {
-    color: var(--blue12);
-    background-color: var(--gray4);
+    color: var(--blue-12);
+    background-color: var(--gray-4);
   }
 </style>
