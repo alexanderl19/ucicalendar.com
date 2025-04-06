@@ -6,6 +6,10 @@ import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 
 export default defineConfig({
+  prefetch: {
+    defaultStrategy: "load",
+    prefetchAll: true,
+  },
   site: "https://ucicalendar.com",
   integrations: [svelte(), mdx(), sitemap()],
   adapter: vercel(),
