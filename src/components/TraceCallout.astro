@@ -1,0 +1,20 @@
+---
+import Callout from "./Callout.svelte";
+
+const { traceId } = Astro.locals;
+const { searchParams } = Astro.url;
+const error = searchParams.get("error");
+---
+
+{
+	error === "1" && (
+		<Callout>
+			{/* prettier-ignore */}
+			<p>
+				This link is not valid. If this link previously worked, or you believe
+				it should be valid, please file an issue on
+				<a href="https://github.com/alexanderl19/ucicalendar.com/issues">GitHub</a> or send me an email (<a href="mailto:a@alexanderliu.com">a@alexanderliu.com</a>). Please include this trace ID: {traceId}.
+			</p>
+		</Callout>
+	)
+}
