@@ -7,9 +7,9 @@ import { register, tracer } from "@lib/instrumentation";
 import { SpanKind } from "@opentelemetry/api";
 import { flatten } from "flat";
 
-// if (getSecret("VERCEL_ENV") === "production") {
-register();
-// }
+if (getSecret("VERCEL_ENV") === "production") {
+	register();
+}
 
 export const onRequest = defineMiddleware((context, next) => {
 	const { request, routePattern } = context;
