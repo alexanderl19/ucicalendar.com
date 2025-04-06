@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 
 export const prerender = false;
 
-export const GET: APIRoute = ({ params, redirect }) => {
+export const GET: APIRoute = async ({ params, redirect, rewrite }) => {
   const { year } = params;
   if (year) {
     const yearInt = Number(year);
@@ -14,10 +14,14 @@ export const GET: APIRoute = ({ params, redirect }) => {
 
       return redirect(
         `${baseUrl}/${fullYearRange}/summer${secondYear}.html`,
-        307
+        307,
       );
     }
   }
 
-  return redirect("/format", 307);
+  const response = await rewrite("/format");
+  return new Response(response.body, {
+    status: 400,
+    statusText: "Year Not Currently Valid",
+  });
 };
