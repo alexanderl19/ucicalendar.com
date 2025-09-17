@@ -4,7 +4,7 @@ export const prerender = false;
 
 export const GET: APIRoute = ({ redirect }) => {
 	return redirect(
-		"https://reg.uci.edu/calendars/quarterly/2024-2025/quarterly24-25.html",
+		"https://reg.uci.edu/calendars/quarterly/2025-2026/quarterly25-26.html",
 		307,
 	);
 };
