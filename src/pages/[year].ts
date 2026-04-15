@@ -7,7 +7,7 @@ export const GET: APIRoute = async ({ params, redirect, rewrite }) => {
 	const { year } = params;
 	if (year) {
 		const yearInt = Number(year);
-		if (8 <= yearInt && yearInt <= 25) {
+		if (8 <= yearInt && yearInt <= 26) {
 			const firstYear = String(yearInt).padStart(2, "0");
 			const secondYear = String(yearInt + 1).padStart(2, "0");
 			const yearRange = `${firstYear}-${secondYear}`;
